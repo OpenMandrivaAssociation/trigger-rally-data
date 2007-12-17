@@ -13,7 +13,6 @@ Source0: http://downloads.sourceforge.net/trigger-rally/%{distname}.tar.bz2
 License: GPL
 Group: Games/Arcade
 Url: http://sourceforge.net/projects/trigger-rally/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 
 %description
