@@ -1,7 +1,7 @@
 %define oname trigger
 %define name %{oname}-rally-data
 %define version 0.5.2
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define distname %{oname}-%{version}-data
 
