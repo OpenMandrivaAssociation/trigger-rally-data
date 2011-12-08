@@ -1,39 +1,34 @@
-%define oname trigger
-%define name %{oname}-rally-data
-%define version 0.5.2
-%define release %mkrel 5
+%define	oname	trigger
 
-%define distname %{oname}-%{version}-data
-
-Summary: Data files for the Trigger rally racing game
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://downloads.sourceforge.net/trigger-rally/%{distname}.tar.bz2
-License: GPL
-Group: Games/Arcade
-Url: http://sourceforge.net/projects/trigger-rally/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArch: noarch
+Summary:	Data files for the Trigger rally racing game
+Name:		%{oname}-rally-data
+Version:	0.6.0
+Release:	%mkrel 1
+Source0:	http://downloads.sourceforge.net/trigger-rally/%{oname}-rally-%{version}-data.tar.bz2
+License:	GPLv2
+Group:		Games/Arcade
+Url:		http://sourceforge.net/projects/trigger-rally/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildArch:	noarch
 
 %description
 Trigger is a fast-paced open source rally racing game.
 This packages contains data files required by Trigger.
 
 %prep
-%setup -q -n %{distname}
+%setup -q -n %{oname}-rally-%{version}-data
 
 %build
 
 %install
-rm -rf %{buildroot}
-install -d %{buildroot}%{_gamesdatadir}/%{oname}
-cp -a * %{buildroot}%{_gamesdatadir}/%{oname}
-rm -f %{buildroot}%{_gamesdatadir}/%{oname}/*.txt
+%__rm -rf %{buildroot}
+%__install -d %{buildroot}%{_gamesdatadir}/%{oname}
+%__cp -a * %{buildroot}%{_gamesdatadir}/%{oname}
+%__rm -f %{buildroot}%{_gamesdatadir}/%{oname}/*.txt
 chmod 644 %{buildroot}%{_gamesdatadir}/%{oname}/trigger.config.defs
 
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
