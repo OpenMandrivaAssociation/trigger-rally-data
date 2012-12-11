@@ -8,7 +8,6 @@ Source0:	http://downloads.sourceforge.net/trigger-rally/%{oname}-rally-%{version
 License:	GPLv2
 Group:		Games/Arcade
 Url:		http://sourceforge.net/projects/trigger-rally/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
 %description
@@ -21,18 +20,11 @@ This packages contains data files required by Trigger.
 %build
 
 %install
-%__rm -rf %{buildroot}
-%__install -d %{buildroot}%{_gamesdatadir}/%{oname}
-%__cp -a * %{buildroot}%{_gamesdatadir}/%{oname}
-%__rm -f %{buildroot}%{_gamesdatadir}/%{oname}/*.txt
+install -d %{buildroot}%{_gamesdatadir}/%{oname}
+cp -ra * %{buildroot}%{_gamesdatadir}/%{oname}
+rm -f %{buildroot}%{_gamesdatadir}/%{oname}/*.txt
 chmod 644 %{buildroot}%{_gamesdatadir}/%{oname}/trigger.config.defs
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc README.txt README-stereo.txt
 %{_gamesdatadir}/%{oname}
-
-
