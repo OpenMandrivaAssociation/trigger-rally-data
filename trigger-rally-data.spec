@@ -3,7 +3,7 @@
 Summary:	Data files for the Trigger rally racing game
 Name:		%{oname}-rally-data
 Version:	0.6.0
-Release:	%mkrel 1
+Release:	2
 Source0:	http://downloads.sourceforge.net/trigger-rally/%{oname}-rally-%{version}-data.tar.bz2
 License:	GPLv2
 Group:		Games/Arcade
