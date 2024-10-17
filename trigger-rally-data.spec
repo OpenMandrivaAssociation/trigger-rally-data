@@ -7,7 +7,7 @@ Release:	2
 Source0:	http://downloads.sourceforge.net/trigger-rally/%{oname}-rally-%{version}-data.tar.bz2
 License:	GPLv2
 Group:		Games/Arcade
-Url:		http://sourceforge.net/projects/trigger-rally/
+Url:		https://sourceforge.net/projects/trigger-rally/
 BuildArch:	noarch
 
 %description
